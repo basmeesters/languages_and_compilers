@@ -1,0 +1,60 @@
+	Bsr main
+	HALT
+main:
+	LINK 2
+	LDC 2
+	LDS 0
+	LDLA 0
+	STA 0
+	AJS -1
+	LDL 0
+	LDC 4
+	ADD
+	LDS 0
+	LDLA 1
+	STA 0
+	AJS -1
+	Bsr method
+	STS 0
+	AJS 1
+	AJS -1
+	LDL 1
+	LDC 3
+	Bsr method2
+	LDR R3
+	STS -1
+	AJS 0
+	ADD
+	LDS 0
+	LDLA 0
+	STA 0
+	AJS -1
+	UNLINK
+	STS 0
+	AJS 1
+	RET
+method:
+	LINK 0
+	LDC 6
+	LDC 5
+	LDC 4
+	TRAP 0
+	TRAP 0
+	TRAP 0
+	AJS -1
+	UNLINK
+	STS 0
+	AJS 1
+	RET
+method2:
+	LINK 0
+	LDL -2
+	LDC 3
+	ADD
+	STR R3
+	UNLINK
+	RET
+	UNLINK
+	STS -1
+	AJS 0
+	RET

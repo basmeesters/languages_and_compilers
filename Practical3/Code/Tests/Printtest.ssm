@@ -1,0 +1,28 @@
+	Bsr main
+	HALT
+main:
+	LINK 0
+	LDC 2
+	LDC 3
+	ADD
+	TRAP 0
+	AJS -1
+	Bsr test
+	STS 0
+	AJS 1
+	AJS -1
+	UNLINK
+	RET
+test:
+	LINK 0
+	LDC 4
+	LDC 5
+	ADD
+	LDC 3
+	LDC 3
+	ADD
+	TRAP 0
+	TRAP 0
+	AJS -1
+	UNLINK
+	RET

@@ -1,0 +1,34 @@
+	Bsr main
+	HALT
+main:
+	LINK 2
+	LDC 1
+	LDS 0
+	LDLA 1
+	STA 0
+	AJS -1
+	BRA 26
+	LDC 3
+	LDL 1
+	MUL
+	LDS 0
+	LDLA 0
+	STA 0
+	AJS -1
+	LDL 1
+	LDC 1
+	ADD
+	LDS 0
+	LDLA 1
+	STA 0
+	AJS -1
+	LDL 1
+	LDC 5
+	LT
+	BRT -33
+	LDL 0
+	AJS -1
+	UNLINK
+	STS 0
+	AJS 1
+	RET

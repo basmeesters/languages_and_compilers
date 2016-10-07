@@ -1,0 +1,16 @@
+	Bsr main
+	HALT
+main:
+	LINK 0
+	LDC -1
+	AJS -1
+	LDC 0
+	AJS -1
+	LDC 99
+	AJS -1
+	LDC 1
+	AJS -1
+	UNLINK
+	STS 0
+	AJS 1
+	RET

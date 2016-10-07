@@ -1,0 +1,48 @@
+	Bsr main
+	HALT
+main:
+	LINK 2
+	LDC 2
+	LDS 0
+	LDLA 0
+	STA 0
+	AJS -1
+	LDL 0
+	LDC 2
+	ADD
+	LDS 0
+	LDLA 1
+	STA 0
+	AJS -1
+	LDL 1
+	Bsr fib
+	LDR R3
+	STS -1
+	AJS 0
+	LDL 0
+	ADD
+	LDS 0
+	LDLA 0
+	STA 0
+	AJS -1
+	UNLINK
+	STS 0
+	AJS 1
+	RET
+fib:
+	LINK 1
+	LDL -2
+	LDS 0
+	LDLA 0
+	STA 0
+	AJS -1
+	LDL -2
+	LDC 2
+	MUL
+	STR R3
+	UNLINK
+	RET
+	UNLINK
+	STS -1
+	AJS 0
+	RET
